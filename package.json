@@ -19,8 +19,8 @@
   ],
   "dependencies": {
     "bluebird": "^3.0.5",
-    "java": "^0.7.0",
-    "lodash": "^3.10.1"
+    "java": "joeferner/node-java",
+    "lodash": "^4.16.6"
   },
   "devDependencies": {
     "codo": "^2.0.11",
