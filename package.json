@@ -27,7 +27,7 @@
     "unit.js": "^2.0.0"
   },
   "optionalDependencies": {
-    "java": "joeferner/node-java",
+    "java": "joeferner/node-java"
   },
   "repository": {
     "type": "git",
