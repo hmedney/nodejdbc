@@ -1,3 +1,4 @@
+Java = require 'java'
 Promise = require 'bluebird'
 ResultSetMetaData = require './rsmd'
 
@@ -36,6 +37,13 @@ class ResultSet
     getTimestamp: (column) ->
         @resultSet.getTimestampSync(column)?.toString()
 
+    getBlob: (column) ->
+        @resultSet.getBlobSync(column)
+
+    getBlobAsString: (column) ->
+        javaLong = Java.newInstanceSync("java.lang.Long", 1);
+        blob = @resultSet.getBlobSync(column);
+        new String(blob.getBytesSync(javaLong, parseInt(blob.lengthSync())))
 
     # Retrieves the number, types and properties of this ResultSet object's columns
     getMetaData: ->
